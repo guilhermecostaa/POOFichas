@@ -139,5 +139,48 @@ function funcK() {
         fatorial *= i
     }
     console.log(fatorial)
+}
 
+//Alinia M
+function funcM() {
+    let valorAno = parseInt(prompt("Escreva um ano: "))
+    let resultado
+    if ((valorAno % 4 == 0 || valorAno % 400) && valorAno % 100 != 0) {
+        resultado = "Bissexto!"
+    }
+    else {
+        resultado = "Não é bissexto!"
+    }
+    
+    console.log(resultado)
+}
+
+//Alinea N
+function funcN() {
+    let numero = prompt("Escreva um número entre 100 a 999")
+    if(numero.charAt(0) == numero.charAt(2)){
+        console.log("Sim")
+    }
+    else{
+        console.log("Não")
+    }
+}
+
+//Alinea O
+function funcO() {
+    let aleatorio = parseInt(Math.random() * 99) + 1
+    console.log(aleatorio)
+    for(let i = 1; i <= 5; i++){
+        let numero = parseInt(prompt("Tente adivinhar o número: "))
+        if (numero == aleatorio) {
+            console.log("Parabens!! Acertou!!")
+        }
+        else if(numero < aleatorio){
+            console.log("Mais acima!!")
+        }
+        else if(numero > aleatorio){
+            console.log("Mais abaixo!!")
+        }
+    }
+    console.log("Game Over!! Esgotaste as tentativas!!!")
 }
