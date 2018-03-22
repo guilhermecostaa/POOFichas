@@ -20,11 +20,23 @@ function funcA() {
 
 //Alinea B
 function funcB() {
-    
+    let grades = [
+        {
+            name: 'Rui',
+            grade: 8
+        },
+        {
+            name: 'Ana',
+            grade: 12
+        },
+        {
+            name: 'Carla',
+            grade: 14
+        }]
+        
 }
 
-//Alinea D
-
+//Alinea C
 let cores = ["vermelho", "verde", "preto", "amarelo", "azul"]
 class Carro {
 
@@ -90,7 +102,7 @@ class Carro {
 let meuCarro1 = new Carro("Ford", "91-GH-15", "verde", "40", "Gasolina")
 let meuCarro2 = new Carro("Fiat", "15-FD-15", "branco", "50", "Gasóleo")
 
-function funcD(){
+function funcC(){
     
     meuCarro1.consumir(801)
 }
