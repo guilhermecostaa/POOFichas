@@ -78,5 +78,5 @@ function funcG() {
         minutos -= 60
     }
     let horas = (numero-minutos*60 - segundos)/3600
-    output(`${numero}s = ${horas}h ${minutos}m ${segundos}s`)
+    output(`${numero}s = ${horas}h + ${minutos}m + ${segundos}s`)
 }
