@@ -70,7 +70,7 @@ function funcF() {
 function funcG() {
     let numero = parseInt(prompt("Escreva o seu número em segundos"))
     let segundos = numero
-    while(numero >=60){
+    while(segundos >=60){
         segundos -= 60 
     }
     let minutos = (numero-segundos)/60
@@ -78,5 +78,47 @@ function funcG() {
         minutos -= 60
     }
     let horas = (numero-minutos*60 - segundos)/3600
+<<<<<<< HEAD
     output(`${numero}s = ${horas}h + ${minutos}m + ${segundos}s`)
+=======
+    output(`${numero}s = ${horas}h ${minutos}m ${segundos}s`)
+}
+
+//Alinea H
+{
+    let string = prompt("Escreva a sua frase")
+    string = string.toLowerCase();
+    let numero = parseInt(prompt("Escreva o numero de posicoes a avançar"))
+    let stringFinal = ""
+    let abecedario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"]
+    for(let i = 0; i <string.length; i++){
+       for(let j = 0 ; i < abecedario.length;i++)
+       {
+           if(string[i] == abecedario[i])
+           {
+               stringFinal = abecedario[i+numero]
+           }
+       }
+    }
+    output(stringFinal)
+}
+
+//tentativa
+function funcH() {
+let palavra = prompt("Escreva a palavra a codificar")
+let vezes = parseInt(prompt("Quantas vezes"))
+let cifra = []
+let abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
+for (let i = 0; i<palavra.length;i++)
+{
+    for(let j = 0 ; j<abc.length;i++)
+    {
+        if(palavra == abc)
+        {
+            cifra = abc[i+j]
+        }
+    }
+}
+output(abc[i])
+>>>>>>> a232f5b1cfb2bc9d8fe7599d8ec8810085ee14b5
 }
