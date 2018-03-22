@@ -78,10 +78,7 @@ function funcG() {
         minutos -= 60
     }
     let horas = (numero-minutos*60 - segundos)/3600
-<<<<<<< HEAD
     output(`${numero}s = ${horas}h + ${minutos}m + ${segundos}s`)
-=======
-    output(`${numero}s = ${horas}h ${minutos}m ${segundos}s`)
 }
 
 //Alinea H
@@ -120,5 +117,4 @@ for (let i = 0; i<palavra.length;i++)
     }
 }
 output(abc[i])
->>>>>>> a232f5b1cfb2bc9d8fe7599d8ec8810085ee14b5
 }
