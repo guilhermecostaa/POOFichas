@@ -152,8 +152,8 @@ function funcC(){
 //Alinea D
 class Cilindro {
     constructor(raio, altura){
-        this._raio = raio
-        this._altura = altura
+        this.raio = raio
+        this.altura = altura
     }
 
     //Propriedade raio
@@ -174,7 +174,7 @@ class Cilindro {
 
     //Formula calcular o volume
     volume(){
-        let calcularVolume = 3.14*this.raio*this.raio*this.altura
+        let calcularVolume = 3.14*this._raio*this._raio*this._altura
     }
 }
 
@@ -186,7 +186,7 @@ function funcD() {
 //Alinea E
 class Circulo{
     constructor(raio){
-        this._raio = raio
+        this.raio = raio
     }
 
     //Propriedade raio
@@ -212,12 +212,11 @@ function funcE() {
         let raiodocirculo = parseInt(prompt("Escreva o raio do circulo"))
         let c = new Circulo(raiodocirculo)
         console.log('Area =', c.area().toFixed(2))
-        console.log('perimeter =', c.perimeter().toFixed(2)) 
+        console.log('perimeter =', c.perimetro().toFixed(2)) 
 }
 
 //Alinea F
+function funcF() {
+    let string = prompt("Escreva a sua frase")
 
-function funcE() {
-    let string = prompt("Escreva a sua farse")
-    for
 }
