@@ -150,3 +150,74 @@ function funcC(){
 }
 
 //Alinea D
+class Cilindro {
+    constructor(raio, altura){
+        this._raio = raio
+        this._altura = altura
+    }
+
+    //Propriedade raio
+    get raio (){
+        return this._raio
+    }
+    set raio (novoRaio){
+        this._raio = novoRaio
+    }
+
+    //Propriedade altura
+    get altura (){
+        return this._altura
+    }
+    set altura (novoAltura){
+        this._altura = novoAltura
+    }
+
+    //Formula calcular o volume
+    volume(){
+        let calcularVolume = 3.14*this.raio*this.raio*this.altura
+    }
+}
+
+function funcD() {
+    let cyl = new Cilindro(7,4)
+    console.log('volume =', cyl.volume().toFixed(4))
+}
+
+//Alinea E
+class Circulo{
+    constructor(raio){
+        this._raio = raio
+    }
+
+    //Propriedade raio
+    get raio (){
+        return this._raio
+    }
+    set raio (novoRaio){
+        this._raio = novoRaio
+    }
+
+    //Formula Area
+    area(){
+        let calcularArea = 3.14*this._raio*this._raio
+    }
+
+    //Formula Perimetro
+    perimetro(){
+        let calcularPerimetro = (2*3.14)*this._raio
+    }
+}
+
+function funcE() {
+        let raiodocirculo = parseInt(prompt("Escreva o raio do circulo"))
+        let c = new Circulo(raiodocirculo)
+        console.log('Area =', c.area().toFixed(2))
+        console.log('perimeter =', c.perimeter().toFixed(2)) 
+}
+
+//Alinea F
+
+function funcE() {
+    let string = prompt("Escreva a sua farse")
+    for
+}
