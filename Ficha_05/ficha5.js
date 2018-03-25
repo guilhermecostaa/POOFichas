@@ -10,7 +10,7 @@ class Retangulo {
     constructor(largura = 1, altura = 1){
         this.largura = largura
         this.altura = altura
-        this._cor = "branco"
+        this.cor = "branco"
     }
 
     get getLargura(){
@@ -146,4 +146,48 @@ function funcD() {
     console.log(`Maior Area é de ${Pais.getNomePaisMaiorArea(paises)}`)
     console.log(`Maior População é de ${Pais.getNomePaisMaiorPopulacao(paises)}`)
     console.log(`Maior Densidade Populacional é de ${Pais.getNomePaisMaiorDensidadePopulacional(paises)}`)
+}
+
+//Exercicio 2
+class Circulo{
+    constructor(raio){
+        this.raio = raio
+    }
+    
+    //Propriedade raio
+    get raio(){
+        return this._raio 
+    }
+    set raio(novoRaio){
+        this._raio = novoRaio
+    }
+
+    //Area do Circulo
+    getArea(){
+        return (3.14*this._raio*this._raio)
+    }
+
+    //Perimetro do Circulo
+    getCircunferencia(){
+        return (3.14* (2*this._raio))
+    }
+
+    //Aumentar Raio
+    aumentarRaio(){
+        let numero = parseInt(prompt("Escreva a percentagem que pretende aumentar o raio do circulo"))
+        let valorAumentar = this._raio*(numero/100)
+        let valorFinal = this._raio + valorAumentar
+        console.log(valorFinal)
+        console.log(Circulo.getArea(circulo1))
+        console.log(Circulo.getCircunferencia(circulo1))
+    }
+}
+
+function funcB() {
+    let raioUtilizador = parseInt(prompt("Escreva o raio do seu circulo"))
+    let circulo1 = new Circulo (raioUtilizador)
+    console.log(raioUtilizador)
+    console.log(Circulo.getArea())
+    console.log(Circulo.getCircunferencia())
+    console.log(Circulo.aumentarRaio())
 }
