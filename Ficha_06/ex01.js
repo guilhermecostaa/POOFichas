@@ -1,16 +1,24 @@
-function output(texto){
-    console.log(texto)
-    let elemento = document.getElementById("output")
-    elemento.innerHTML = texto
-}
-window.onload = function () {
-    bemVindo()
-}
-function bemVindo() {
-    document.getElementsByTagName("p")[0].innerHTML = "Bem-Vindo à minha página"
+window.onload = function() {
+    init()    
 }
 
-function funcP() {
-    let frase =  document.getElementsByTagName("textarea")[0].innerHTML
-    frase = "Bem vindo " + nome
+function init() {
+    // Obtenção das referências para os elementos HTML    
+    let myP = document.getElementById("myP")
+    let myTxt = document.getElementById("myTxt")
+    let myBtn = document.getElementById("myBtn")
+    
+    // Alteração do texto do elemento parágrafo
+    myP.innerHTML = "Bem-vindo à minha página!"
+
+    // Clique no botão    
+    myBtn.addEventListener("click", function() {
+        // Se a caixa de texto estiver vazia: adiciona no parágrafo o texto que está na caixa de texto                
+        if (myTxt.value != "") {
+            myP.innerHTML = "Bem-vindo, " + myTxt.value + "!"            
+        // Se a caixa de texto não estiver vazia: adiciona no parágrafo o texto original                
+        } else {
+            myP.innerHTML = "Bem-vindo à minha página!"            
+        }
+    })
 }
