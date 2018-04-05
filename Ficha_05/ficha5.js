@@ -1,4 +1,4 @@
-function output(texto){
+function output(texto) {
     console.log(texto)
     let elemento = document.getElementById("output")
     elemento.innerHTML = texto
@@ -7,98 +7,98 @@ function output(texto){
 //Exercicio 1
 class Retangulo {
 
-    constructor(largura = 1, altura = 1){
+    constructor(largura = 1, altura = 1) {
         this.largura = largura
         this.altura = altura
         this.cor = "branco"
     }
 
-    get getLargura(){
+    get getLargura() {
         return this._largura
     }
 
-    set setLargura(newValue){
+    set setLargura(newValue) {
         if (typeof newValue === "number" && newValue > 1) {
             this._largura = newValue
         }
     }
 
-    get getAltura(){
+    get getAltura() {
         return this._altura
     }
 
-    set setAltura(newValue){
+    set setAltura(newValue) {
         if (typeof newValue === "number" && newValue > 1) {
             this._altura = newValue
         }
     }
 
-    get cor(){
+    get cor() {
         return this._cor
     }
 
-    getArea(){
+    getArea() {
         return this.largura * this.altura
     }
 
-    getPerimetro(){
+    getPerimetro() {
         return 2 * this.largura + 2 * this.altura
     }
 }
 function funcA() {
-    let myRet = new Retangulo (2,3)
+    let myRet = new Retangulo(2, 3)
     console.log(myRet.largura)
     myRet.largura = 5
     console.log(myRet.largura)
     console.log(myRet.getArea())
     console.log(myRet.getPerimetro())
-    let myRet2 = new Retangulo ()
-    console.log(myRet2.getArea())    
+    let myRet2 = new Retangulo()
+    console.log(myRet2.getArea())
 }
 
 
 //Exercicio 5
-class Pais{
+class Pais {
 
-    constructor(nome, area, populacao){
+    constructor(nome, area, populacao) {
         this.nome = nome
         this.area = area
         this.populacao = populacao
     }
 
     // propriedade Nome
-    get nome(){
+    get nome() {
         return this._nome
     }
-    set nome(newNome){
+    set nome(newNome) {
         this._nome = newNome
     }
 
     //Propriedade area
-    get area(){
+    get area() {
         return this._area
     }
-    set area(newValue){
+    set area(newValue) {
         this._area = newValue
     }
 
     //Propiedade População
-    get populacao(){
+    get populacao() {
         return this._populacao
     }
-    set populacao(newPopulacao){
+    set populacao(newPopulacao) {
         this._populacao = newPopulacao
     }
 
     //Funçao densidade
     densidade() {
-        return (this._populacao/this._area).toFixed(1)
+        return (this._populacao / this._area).toFixed(1)
     }
 
-    static getNomePaisMaiorArea(array){
+    static getNomePaisMaiorArea(array) {
         let maior = 0
         let nome = ""
-        for(let i in array){
+        for (let i in array) {
             if (array[i].area > maior) {
                 maior = array[i].area
                 nome = array[i].nome
@@ -107,25 +107,25 @@ class Pais{
         return nome
     }
 
-    static getNomePaisMaiorPopulacao(array){
+    static getNomePaisMaiorPopulacao(array) {
         let maior = 0
         let nome = ""
-        for(let i in array){
+        for (let i in array) {
             if (array[i].populacao > maior) {
                 maior = array[i].populacao
-                nome =array[i].nome
+                nome = array[i].nome
             }
         }
         return nome
     }
 
-    static getNomePaisMaiorDensidadePopulacional(array){
+    static getNomePaisMaiorDensidadePopulacional(array) {
         let maior = 0
         let nome = ""
-        for(let i in array){
+        for (let i in array) {
             if (array[i].densidade() > maior) {
                 maior = array[i].densidade()
-                nome =array[i].nome
+                nome = array[i].nome
             }
         }
         return nome
@@ -133,14 +133,14 @@ class Pais{
 }
 
 function funcD() {
-    
+
     let paises = []
 
-    let meuPais1 = new Pais ("Portugal", 2049495605605986,10000000)
-    let meuPais2 = new Pais ("Espanha", 20494956,20000000)
-    let meuPais3 = new Pais ("Itália", 204945864,13000000)
-    let meuPais4 = new Pais ("Egito", 2049204525986,15000000)
-    let meuPais5 = new Pais ("Timor", 20496,60000)
+    let meuPais1 = new Pais("Portugal", 2049495605605986, 10000000)
+    let meuPais2 = new Pais("Espanha", 20494956, 20000000)
+    let meuPais3 = new Pais("Itália", 204945864, 13000000)
+    let meuPais4 = new Pais("Egito", 2049204525986, 15000000)
+    let meuPais5 = new Pais("Timor", 20496, 60000)
 
     paises.push(meuPais1, meuPais2, meuPais3, meuPais4, meuPais5)
     console.log(`Maior Area é de ${Pais.getNomePaisMaiorArea(paises)}`)
@@ -149,45 +149,39 @@ function funcD() {
 }
 
 //Exercicio 2
-class Circulo{
-    constructor(raio){
+class Circulo {
+    constructor(raio) {
         this.raio = raio
     }
-    
+
     //Propriedade raio
-    get raio(){
-        return this._raio 
+    get raio() {
+        return this._raio
     }
-    set raio(novoRaio){
+    set raio(novoRaio) {
         this._raio = novoRaio
     }
 
     //Area do Circulo
-    getArea(){
-        return (3.14*this._raio*this._raio)
+    getArea() {
+        return (3.14 * this._raio * this._raio)
     }
 
     //Perimetro do Circulo
-    getCircunferencia(){
-        return (3.14* (2*this._raio))
+    getCircunferencia() {
+        return (3.14 * (2 * this._raio))
     }
 
     //Aumentar Raio
-    aumentarRaio(){
-        let numero = parseInt(prompt("Escreva a percentagem que pretende aumentar o raio do circulo"))
-        let valorAumentar = this._raio*(numero/100)
-        let valorFinal = this._raio + valorAumentar
-        console.log(valorFinal)
-        console.log(Circulo.getArea(circulo1))
-        console.log(Circulo.getCircunferencia(circulo1))
+    aumentarRaio(percentagem) {
+        this.raio = Math.round(this.raio + this.raio*(percentagem/100))
     }
 }
 
 function funcB() {
     let raioUtilizador = parseInt(prompt("Escreva o raio do seu circulo"))
-    let circulo1 = new Circulo (raioUtilizador)
-    console.log(raioUtilizador)
-    console.log(Circulo.getArea())
-    console.log(Circulo.getCircunferencia())
-    console.log(Circulo.aumentarRaio())
+    let circulo1 = new Circulo(raioUtilizador)
+    let percentagem = parseInt(prompt("Escreva a percentagem que pretende aumentar o raio do circulo"))
+    circulo1.aumentarRaio(percentagem)
+    console.log(`Apos ter aumentado o raio em ${percentagem}%, o novo raio é: ${circulo1.raio}`)
 }
