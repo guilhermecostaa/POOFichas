@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ficha07</title>
+    <script src="ex2.js"></script>
+</head>
+<body>
+    <form id="frmRuning" action="" autocomplete="on">
+            <label for="txtNome">Nome</label>
+            <input type="nome" name="" id="txtNome" required maxlength="50" required autofocus>
+            <br>
+            <label for="txtMorada">Morada</label>
+            <input type="morada" name="" id="txtMorada" >
+            <br>
+            <label for="txtCodigoPostal1">Código Postal</label>
+            <input type="codigoPostal1" name="" id="txtCodigoPostal1" minlength="4" maxlength="4">
+            <label for="separacao">-</label>
+            <label for="txtCodigoPostal2"></label>
+            <input type="codigoPostal2" name="" id="txtCodigoPostal2" minlength="3" maxlength="3">
+            <br>
+            <label for="txtTelemovel">Telemóvel</label>
+            <input type="telemovel" name="" id="txtTelemovel" required minlength="9" maxlength="9">
+            <br>
+            <label for="txtDataNascimento">Data Nascimento</label>
+            <input type="date" name="" id="txtDataNascimento" >
+            <br>
+            <label for="txtLocalidade">Localidade</label>
+            <input list="locais" name="txtLocalidade">
+            <datalist id="locais">
+              <option value="Porto">
+              <option value="Lisboa">
+              <option value="Braga">
+              <option value="Aveiro">
+              <option value="Coimbra">
+            </datalist>
+            <br>
+            <label for="txtSexo">Sexo</label>
+            <input type="radio" name="Masculino" value="M"> M
+            <input type="radio" name="Feminino" value="F"> F
+            <br>
+            <label for="txtEmail">E-mail</label>
+            <input type="email" name="" id="txtEmail" required>
+            <br>
+            <label for="txtUser">Username</label>
+            <input type="user" name="" id="txtUser" required>
+            <br>
+            <label for="txtPassword">Passoword</label>
+            <input type="password" name="" id="txtPass" required 
+                minlength="7" maxlength="10" autocomplete="off">
+            <br>
+            <label for="txtConfirmarPassword">Confirme</label>
+            <input type="password" name="" id="txtConfirmPass" required 
+                minlength="7" maxlength="10" autocomplete="off">
+            <br>
+            <label for="txtTamanho">Tamanho</label>
+            <input list="tamanho" name="txtTamanho">
+            <datalist id="tamanho">
+              <option value="S">
+              <option value="M">
+              <option value="L">
+              <option value="XL">
+              <option value="XXL">
+            </datalist>
+            <br>
+            <label for="txtPagina">Pagina Pessoal</label>
+            <input type="url" name="" id="txtPagina" >
+            <br>
+            <label for="txtSapatilha">Nº Sapatilha</label>
+            <input type="sapatilha" name="" id="txtSapatilha" min="30" max"50">
+            <br>
+            <label for="txtDesportos">Desportos Praticados</label>
+            <input type="checkbox" name="sport" value="Running"> Running
+            <input type="checkbox" name="sport" value="Cycling"> Cycling
+            <input type="checkbox" name="sport" value="Natacao"> Natacao
+            <input type="checkbox" name="sport" value="Futebol"> Futebol
+            <input type="checkbox" name="sport" value="Vela"> Vela
+            <input type="checkbox" name="sport" value="Ténis"> Ténis
+            <input type="checkbox" name="sport" value="Outros"> Outros
+            <br>
+            <label for="txtObservacoes">Observaçoes</label>
+            <br>
+            <textarea name="" id="output" cols="30" rows="10" style="resize:none"></textarea>
+            <br>
+            <input id="btnSubmit" type="submit" value="SUBMETER">
+            <input id="btnReset" type="reset" value="LIMPAR">
+
+
+
+    </form>
+</body>
+</html>
