@@ -103,7 +103,7 @@ function funcG() {
 //tentativa
 function funcH() {
 let palavra = prompt("Escreva a palavra a codificar")
-let vezes = parseInt(prompt("Quantas vezes"))
+let vezes = parseInt(prompt("Quantas vezes?"))
 let cifra = []
 let abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
 for (let i = 0; i<palavra.length;i++)
