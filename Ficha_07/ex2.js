@@ -5,6 +5,8 @@ window.onload = function () {
     let txtConfirmPass = document.getElementById("txtComnfirmPass")
     let isValidate = true
     let msg = ""
+    let txtData = this.document.getElementById("txtData")
+    txtData.setAttribute("max", formatDate(new Date()))
     
     frmRunning.addEventListener("submit", function (event) {
     if(txtPass.value != txtConfirmPass.value ){
@@ -24,4 +26,16 @@ window.onload = function () {
         console.log(true)
         txtNome.focus()
     })
+    }
+
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+    
+        return [year, month, day].join('-');
     }
