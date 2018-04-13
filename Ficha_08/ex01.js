@@ -21,7 +21,7 @@ class Personality{
     get year(){
         return this._year
     }
-    set name(newYear){
+    set year(newYear){
         this._year = newYear
     }
 
@@ -29,7 +29,7 @@ class Personality{
     get nacionality(){
         return this._nacionality
     }
-    set name(newNacionality){
+    set nacionality(newNacionality){
         this._nacionality = newNacionality
     }
 
@@ -37,7 +37,7 @@ class Personality{
     get work(){
         return this._work
     }
-    set name(newWork){
+    set work(newWork){
         this._work = newWork
     }
 
@@ -45,7 +45,7 @@ class Personality{
     get photo(){
         return this._photo
     }
-    set name(newPhoto){
+    set photo(newPhoto){
         this._photo = newPhoto
     }
 }
@@ -54,26 +54,30 @@ class Personality{
 let personlaties = []
 
 
-windom.onload = function(){
+window.onload = function(){
 
-    let frmPersonality = document.getElementById("form")
+    let form = document.getElementById("form")
     
     //1. Validar o campo Year
     let currentYear = new Date().getFullYear() - 1
-    let inputYaer = document.getElementById("inputYear")
-    inputYear.setAttribute("max", currentYear)
+    let year = document.getElementById("inputYear")
+    let nacionality = document.getElementById("inputNacionality").value
+    let work = document.getElementById("inputWork").value
+    let photo = document.getElementById("inputPhoto").value
 
-    form.addEventListener("Reset", function() {
+    year.setAttribute("max", currentYear)
+
+    form.addEventListener("reset", function() {
         inputName.focus()
     })
 
     form.addEventListener("submit", function(event){
         
-
+        console.log(true)
         //2. Criar um objeto Personality
-        let inputName = document.getElementById("inputName").nameValue
+        let name = document.getElementById("inputName").value
 
-        let newPersonality = new Personality(name,year,nacionality,work,photo)
+        let newPersonality = new Personality(name,year.value,nacionality,work,photo)
 
         //3. Guardar o objeto num array
         personlaties.push(newPersonality)
@@ -87,21 +91,29 @@ windom.onload = function(){
     // Function to render the Personality object in the table
     function renderTable(){
         let tblPersonalities = document.getElementById("tblPersonalities")
-        let strTable =""
+        let strTable =`<thead><tr><th>#</th>
+                       <th>Name</th>
+                       <th>Year</th>
+                       <th>Nacionality</th>
+                       <th>Work</th>
+                       <th>Photo</th>
+                       <tr>
+                       <thead>`
     
         for (var i = 0; i < personlaties.length; i++) {
-            strHtml += `<tr>
-                            <td>(i+1)</td>
-                            <td>${personlaties[i].name}</td>
-                            <td>${personlaties[i].year}</td>
-                            <td>${personlaties[i].nacionality}</td>
-                            <td>${personlaties[i].work}</td>
-                            <td>${personlaties[i].photo}</td>
-                        </tr>`
+            strTable += `<tbody>
+                            <tr>
+                                <td scope="row">${(i+1)}</td>
+                                <td>${personlaties[i].name}</td>
+                                <td>${personlaties[i].year}</td>
+                                <td>${personlaties[i].nacionality}</td>
+                                <td>${personlaties[i].work}</td>
+                                <td>${personlaties[i].photo}</td>
+                            </tr>`
         }
-        strHtml += "</tbody"
+        strTable += "</tbody>"
 
-        tblPersonalities.innerHTML = strHtml
+        tblPersonalities.innerHTML = strTable
     } 
 
 }
