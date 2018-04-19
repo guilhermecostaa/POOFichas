@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Ficha08</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Custom js-->
+    <script src="ex01.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Personalties App</h1>
+            <p class="lead">Easy way to manage personalities</p>
+            <hr class="my-2">
+            <form id="form">
+                <div class="form-row">
+                    <!--Nome-->
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Name</label>
+                        <input type="text" class="form-control" id="inputName" autofocus required>
+                    </div>
+
+                    <!--Year-->
+                    <div class="form-group col-md-3">
+                        <label for="inputYear">Year</label>
+                        <input type="date" class="form-control" id="inputYear" required>
+                    </div>
+
+                    <!--Nacionality-->
+                    <div class="form-group col-md-3">
+                        <label for="inputNacionality">Nacionality</label>
+                        <div class="input-group">
+                            <select required class="form-control" id="inputNacionality">
+                                <option hidden value="">Selecione</option>
+                                <option value="Europa">Europa</option>
+                                <option value="America">America</option>
+                                <option value="Africa">Africa</option>
+                                <option value="Asia">Asia</option>
+                                <option value="Oceania">Oceania</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!--Work-->
+                    <div class="form-group col-md-6">
+                        <label for="inputWork">Work</label>
+                        <input type="text" class="form-control" id="inputWork" required>
+                    </div>
+
+                    <!--Photo-->
+                    <div class="form-group col-md-6">
+                            <label for="inputWork">Photo</label>
+                            <input type="url" class="form-control" id="inputWork" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!--Botoes-->
+                    <div class="form-group col-md-6">
+                        <input id="submit" class="btn-primary form-control" type="button" value="Submit">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <input id="reset" class="btn-primary form-control" type="button" value="Reset">
+                        </div>
+                </div>
+                        
+            </form>
+            <!-- Table-->
+            <table id="tblPersonalities" class="table table-sm">
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
