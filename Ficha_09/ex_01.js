@@ -14,7 +14,6 @@ class Utilizador{
         this._nome = novoNome
     }
 
-    
     //Propriedade Email
     get email(){
         return this._email
