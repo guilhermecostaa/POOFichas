@@ -1,4 +1,7 @@
-
 nav a:hover{
     color: white !important;
+}
+
+.marca{
+    font-family: 'Lobster', cursive;
 }
