@@ -1,32 +1,11 @@
-<<<<<<< HEAD
-class User {
-    constructor(nome, email, password){
-=======
 //Criacao da Classe para o utilizador
 class Utilizador {
     constructor(nome, email, password) {
         this._id = Utilizador.getLastId() + 1
->>>>>>> c9dfe6baee2b036e4c69f6538c88bb90792fffd4
         this.nome = nome
         this.email = email
         this.password = password
     }
-<<<<<<< HEAD
-    
-    //Propriedade Nome
-    get nome (){
-        return this._nome
-    }
-    set nome (novoNome){
-        this._nome = novoNome
-    }
-
-    //Propriedade Email
-    get email(){
-        return this._email
-    }
-    set email(novoEmail){
-=======
 
     //Propriedade Nome
     get nome() {
@@ -42,31 +21,10 @@ class Utilizador {
         return this._email
     }
     set email(novoEmail) {
->>>>>>> c9dfe6baee2b036e4c69f6538c88bb90792fffd4
         this._email = novoEmail
     }
 
     //Propriedade Password
-<<<<<<< HEAD
-    get password(){
-        return this._password
-    }
-    set email(novoPassword){
-        this._password = novoPassword
-    }
-}
-
-
-
-
-window.onload = function(){
-    let logout = document.getElementById("inputLogout")
-    logout.style.display = "none"
-    let boasVindas = document.getElementById("boasVindas")
-    boasVindas.style.display ="none"
-
-}
-=======
     get password() {
         return this._password
     }
@@ -201,4 +159,3 @@ window.onload = function () {
 
 
 }
->>>>>>> c9dfe6baee2b036e4c69f6538c88bb90792fffd4
