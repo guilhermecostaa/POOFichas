@@ -73,15 +73,16 @@ class Utilizador {
 }
 
 //Criacao da Clasee para as Viagens
-class Viagens {
-    constructor(titulo, pais, data, foto, pontuacao, descricao) {
-        this._id = Viagens.getLastId() + 1
+class Viagem {
+    constructor(titulo, pais, data, foto, pontuacao, descricao, idAutor) {
+        this._id = Viagem.getLastId() + 1
         this.titulo = titulo
         this.pais = pais
         this.data = data
         this.foto = foto
         this.pontuacao = pontuacao
         this.descricao = descricao
+        this._idAutor = idAutor
     }
     //Propriedade Titulo
     get titulo() {
@@ -135,6 +136,10 @@ class Viagens {
         return this._id
     }
 
+    get idAutor() {
+        return this._idAutor
+    }
+
     static getLastId() {
         let id = 0
         if (viagens.length > 0) {
@@ -142,6 +147,15 @@ class Viagens {
         }
         return id
     }
+
+    static removerViagemById(id) {
+        for (let i in viagens) {
+            if (viagens[i].id == id) {
+                viagens.splice(i, 1)
+            }
+        }
+    }
+
 }
 
 
@@ -152,9 +166,14 @@ let viagens = []
 
 //Utilizador Teste
 utilizadores.push(new Utilizador("Teste", "teste@teste.pt", "123"))
+utilizadores.push(new Utilizador("Teste2", "teste2@teste.pt", "123"))
 
+viagens.push(new Viagem("Toppen", "Portugal", "2017-05-02", "https://upload.wikimedia.org/wikipedia/commons/3/37/Liberty-statue-from-below.jpg", "10", "OH GUSTAVO OH BOI", 1))
+viagens.push(new Viagem("Toppen", "Portugal", "2017-05-02", "https://upload.wikimedia.org/wikipedia/commons/3/37/Liberty-statue-from-below.jpg", "10", "OH GUSTAVO OH BOI", 2))
 
 window.onload = function () {
+    gerarCards()
+
     //Forms
     let formLogin = document.getElementById("formLogin")
     let formRegisto = document.getElementById("formRegisto")
@@ -218,7 +237,7 @@ window.onload = function () {
             bemVindo.innerHTML = `Olá, ${nome}`
 
             idUtilizadorLogado = id
-
+            gerarCards(idUtilizadorLogado)
         } else {
             alert("Email ou password invalido!")
         }
@@ -233,6 +252,7 @@ window.onload = function () {
         btnRegisto.style.visibility = "visible"
         bemVindo.style.visibility = "hidden"
         bemVindo.innerHTML = ""
+        gerarCards()
     })
 
     formAdicionar.addEventListener("submit", function (event) {
@@ -241,7 +261,7 @@ window.onload = function () {
         if (dataAtual < dataInput) {
             alert("Data Inválida!!")
         } else {
-            let newViagem = new Viagens(tituloAdicionar.value, paisAdicionar.value, dataAdicionar.value, urlFotoAdicionar.value, pontuacaoAdicionar.value, descricaoAdicionar.value)
+            let newViagem = new Viagem(tituloAdicionar.value, paisAdicionar.value, dataAdicionar.value, urlFotoAdicionar.value, pontuacaoAdicionar.value, descricaoAdicionar.value, idUtilizadorLogado)
             viagens.push(newViagem)
         }
 
@@ -251,31 +271,56 @@ window.onload = function () {
 
 }
 
-function gerarCards(idUtilizadorLogado = -1) {
-    let cards = document.getElementById("cards") 
+function gerarCards(id = -1) {
+    let cards = document.getElementById("cards")
     let str = ""
 
-    //Caso o utilizador nao esteja logado
-    if(idUtilizadorLogado == -1){
-        for(let i in viagens){
-            let desc = viagens[i].descricao
-            //Caso a descricao tenha mais de 50 car corta-a
-            if(desc.length > 50){
-                desc = desc.substr(0,desc.indexOf(" ",50)) + "..."
-            }
+    for (let i in viagens) {
+        let desc = viagens[i].descricao
+        //Caso a descricao tenha mais de 50 car corta-a
+        if (desc.length > 50) {
+            desc = desc.substr(0, desc.indexOf(" ", 50)) + "..."
+        }
+        if (id == -1) {//Caso o utilizador nao esteja logado
             str += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                        <div class="card">
+                        <div class="card" id="${viagens[i].id}">
                             <img class="card-img-top" src="${viagens[i].foto}" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">"${viagens[i].titulo}"</h4>
                                 <p class="card-text">"${viagens[i].descricao}"</p>
                             </div>
+                            <div class="card-footer">Por ${Utilizador.getNomeById(viagens[i].idAutor)}</div>
                         </div>
                     </div>`
         }
-    }else{//Caso o utilizador estiver logado
+        if (id != -1 && id == viagens[i].idAutor) {//Caso o utilizador esteja logado
+            str += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
+                        <div class="card" id="${viagens[i].id}">
+                            <img class="card-img-top" src="${viagens[i].foto}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">${viagens[i].titulo}</h4>
+                                <p class="card-text">${viagens[i].descricao}</p>
+                            </div>
+                            <div class="card-footer">
+                                Por ${Utilizador.getNomeById(viagens[i].idAutor)}
+                                <a class="btn btn-danger pull-right remover" href="#" role="button"><i class="fa fa-minus-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>`
+        }
 
     }
-    
-    cards.innerHTML = str
+
+    cards.innerHTML = str    
+
+    let btnRemover = document.getElementsByClassName("remover")
+
+    for (let i = 0; i < btnRemover.length; i++) {
+        btnRemover[i].addEventListener("click", function () {
+            let idViagem = parseInt(btnRemover[i].parentNode.parentNode.id)
+            Viagem.removerViagemById(idViagem)
+            gerarCards(idUtilizadorLogado)
+        })
+
+    }
 }
