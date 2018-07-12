@@ -100,7 +100,7 @@
     <!--Catálogo-->
     <div class="jumbotron mt-5" id="catalogo">
       <h1 class="display-3 text-center marca">Catálogo</h1>
-        <div id="cards" class="rows"></div>
+      <div id="cards" class="row"></div>
     </div>
   </div>
 
@@ -527,8 +527,26 @@
   </div>
   <!-- Fim modal adicionar viagem -->
 
+<!--Remover Modal-->
+  <div class="modal fade" id="removerModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"> Deseja mesmo remover?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
 
-
+        </div>
+        <div class="modal-body" id="modalCorpo">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="confirmarRemover">Remover</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
 
 
 
