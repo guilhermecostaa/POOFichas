@@ -144,6 +144,10 @@ class Viagem {
         return this._id
     }
 
+    get idAutor() {
+        return this._idAutor
+    }
+
     static getLastId() {
         let id = 0
         if (viagens.length > 0) {
@@ -151,6 +155,15 @@ class Viagem {
         }
         return id
     }
+
+    static removerViagemById(id) {
+        for (let i in viagens) {
+            if (viagens[i].id == id) {
+                viagens.splice(i, 1)
+            }
+        }
+    }
+
 }
 
 
@@ -172,8 +185,12 @@ viagens.push(new Viagem("Boi6", "Portugal", "2018-06-13", "http://static.asiaweb
 viagens.push(new Viagem("Boi7", "Portugal", "2018-06-13", "http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/top10-hotels/pagePropertiesImage/viceroy-bali.jpg.jpg", "Toppen", "10", 1))
 
 
+viagens.push(new Viagem("Toppen", "Portugal", "2017-05-02", "https://upload.wikimedia.org/wikipedia/commons/3/37/Liberty-statue-from-below.jpg", "10", "OH GUSTAVO OH BOI", 1))
+viagens.push(new Viagem("Toppen", "Portugal", "2017-05-02", "https://upload.wikimedia.org/wikipedia/commons/3/37/Liberty-statue-from-below.jpg", "10", "OH GUSTAVO OH BOI", 2))
 
 window.onload = function () {
+    gerarCards()
+
     //Forms
     let formLogin = document.getElementById("formLogin")
     let formRegisto = document.getElementById("formRegisto")
@@ -252,6 +269,7 @@ window.onload = function () {
         btnRegisto.style.visibility = "visible"
         bemVindo.style.visibility = "hidden"
         bemVindo.innerHTML = ""
+        gerarCards()
     })
 
     formAdicionar.addEventListener("submit", function (event) {
@@ -286,11 +304,27 @@ function gerarCards(idUtilizadorLogado = -1) {
                 desc = desc.substr(0, desc.indexOf(" ", 50)) + "..."
             }
             str += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                        <div class="card">
+                        <div class="card" id="${viagens[i].id}">
                             <img class="card-img-top" src="${viagens[i].foto}" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">${viagens[i].titulo}</h4>
                                 <p class="card-text">${viagens[i].descricao}</p>
+                            </div>
+                            <div class="card-footer">Por ${Utilizador.getNomeById(viagens[i].idAutor)}</div>
+                        </div>
+                    </div>`
+        }
+        if (id != -1 && id == viagens[i].idAutor) {//Caso o utilizador esteja logado
+            str += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
+                        <div class="card" id="${viagens[i].id}">
+                            <img class="card-img-top" src="${viagens[i].foto}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">${viagens[i].titulo}</h4>
+                                <p class="card-text">${viagens[i].descricao}</p>
+                            </div>
+                            <div class="card-footer">
+                                Por ${Utilizador.getNomeById(viagens[i].idAutor)}
+                                <a class="btn btn-danger pull-right remover" href="#" role="button"><i class="fa fa-minus-circle"></i></a>
                             </div>
                         </div>
                     </div>`
