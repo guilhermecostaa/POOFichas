@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ficha 07</title>
+    <script src="ex2.js"></script>
+</head>
+<body>
+    <!--Formulario-->
+        <form id="frmRuning" action="" autocomplete="on">
+            <!--Nome-->
+            <label for="txtNome">Nome</label>
+            <input type="text" name="" id="txtNome" required maxlength="50" required autofocus autocomplete="on">
+            <br>
+            <!--Morada-->
+            <label for="txtMorada">Morada</label>
+            <input type="text" name="" id="txtMorada" autocomplete="on">
+            <br>
+            <!--Código Postal-->
+            <label for="txtCodigoPostal1">Código Postal</label>
+            <input type="number" name="" id="txtCodigoPostal1" maxlength="4" autocomplete="on">
+            <label for="separacao">-</label>
+            <label for="txtCodigoPostal2"></label>
+            <input type="number" name="" id="txtCodigoPostal2" maxlength="3" autocomplete="on">
+            <br>
+            <!--Telemovel-->
+            <label for="txtTelemovel">Telemovel</label>
+            <input type="number" name="" id="txtTelemovel" maxlength="9" minlength="9" required autocomplete="on">
+            <br>
+            <!--Data de nascimento-->
+            <label for="txtData">Data de nascimento</label>
+            <input type="data" name="" id="txtData" autocomplete="on">
+            <br>
+            <!--Localidade-->
+            <label for="txtLocalidade">Localidade</label>
+            <input list="locais" name="txtLocalidade" autocomplete="on">
+            <datalist id="locais">
+                <option value="Porto">
+                    <option value="Lisboa">
+                        <option value="Braga">
+                            <option value="Aveiro">
+                                <option value="Coimbra">
+            </datalist>
+            <br>
+            <!--Sexo-->
+            <label for="txtSexo">Sexo</label>
+            <input type="radio" name="Masculino" value="M"> M
+            <input type="radio" name="Feminino" value="F"> F
+            <br>
+            <!--Email-->
+            <label for="txtEmail">Email</label>
+            <input type="email" name="" id="txtEmail" required autocomplete="on" accesskey="E">
+            <br>
+            <!--Credenciais-->
+            <label for="txtUser">Username</label>
+            <input type="user" name="" id="txtUser" required>
+            <br>
+            <label for="txtPassword">Passoword</label>
+            <input type="password" name="" id="txtPass" required minlength="7" maxlength="10" autocomplete="off">
+            <br>
+            <label for="txtConfirmarPassword">Confirme</label>
+            <input type="password" name="" id="txtConfirmPass" required minlength="7" maxlength="10" autocomplete="off">
+            <br>
+            <!--Tamanho-->
+            <label for="txtTamanho">Tamanho</label>
+            <select name="" id="tamanho">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+            </select>
+            <br>
+            <!--Página Pessoal-->
+            <label for="txtPaginaPessoal">Página Pessoal</label>
+            <input type="url" name="" id="txtPaginaPessoal" autocomplete="on">
+            <br>
+            <!--Nº Sapatilha-->
+            <label for="txtSapatilha">Sapatilha</label>
+            <input type="number" name="" id="txtSapatilha" max="50" min="30" autocomplete="on">
+            <br>
+            <!--Principais Desportos-->
+            <label for="txtDesportos">Desportos Praticados</label>
+            <input type="checkbox" name="sport" value="Running"> Running
+            <input type="checkbox" name="sport" value="Cycling"> Cycling
+            <input type="checkbox" name="sport" value="Natacao"> Natacao
+            <input type="checkbox" name="sport" value="Futebol"> Futebol
+            <input type="checkbox" name="sport" value="Vela"> Vela
+            <input type="checkbox" name="sport" value="Ténis"> Ténis
+            <input type="checkbox" name="sport" value="Outros"> Outros
+            <br>
+            <!--Observações-->
+            <label for="txtObservacoes">Observaçoes</label>
+            <br>
+            <textarea name="" id="output" cols="30" rows="10" style="resize:none"></textarea>
+            <br>
+            <input id="btnSubmit" type="submit" value="SUBMETER">
+            <input id="btnReset" type="reset" value="LIMPAR">
+        </form>    
+
+</body>
+</html>
