@@ -314,21 +314,7 @@ function gerarCards(idUtilizadorLogado = -1) {
                         </div>
                     </div>`
         }
-        if (id != -1 && id == viagens[i].idAutor) {//Caso o utilizador esteja logado
-            str += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                        <div class="card" id="${viagens[i].id}">
-                            <img class="card-img-top" src="${viagens[i].foto}" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">${viagens[i].titulo}</h4>
-                                <p class="card-text">${viagens[i].descricao}</p>
-                            </div>
-                            <div class="card-footer">
-                                Por ${Utilizador.getNomeById(viagens[i].idAutor)}
-                                <a class="btn btn-danger pull-right remover" href="#" role="button"><i class="fa fa-minus-circle"></i></a>
-                            </div>
-                        </div>
-                    </div>`
-        }
+       
     } else {//Caso o utilizador estiver logado
         for (let i in viagens) {
             if (viagens[i].idAutor == idUtilizadorLogado) {
