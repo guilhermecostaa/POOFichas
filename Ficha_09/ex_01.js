@@ -314,7 +314,6 @@ function gerarCards(idUtilizadorLogado = -1) {
                         </div>
                     </div>`
         }
-       
     } else {//Caso o utilizador estiver logado
         for (let i in viagens) {
             if (viagens[i].idAutor == idUtilizadorLogado) {
